@@ -21,9 +21,6 @@ public class EmployeeAuthClient {
         try {
             String response = HttpClientUtil.post(LOGIN_URL, LOGIN_BODY);
 
-            // 💡 Loguear la respuesta COMPLETA (Crucial para debug si falla)
-            System.out.println("✅ Respuesta cruda del login (API DEV): " + response);
-
             JsonNode root = mapper.readTree(response);
             JsonNode tokenNode = root.get("accessToken");
 
